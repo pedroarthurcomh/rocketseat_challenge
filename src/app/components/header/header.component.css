@@ -1,0 +1,68 @@
+header{
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    padding: 20px 160px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    color: #5D5D6D;
+    font-size: 40px;
+    line-height: 60px;
+}
+
+div#input{
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+input {
+    height: 42px;
+    width: 352px;
+    background-color: #F3F5F6;
+    color: #737380;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+svg#search_icon{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+div#header_tools{
+    display: flex;
+    gap: 20px;
+}
+
+div.count{
+    background-color: #DE3838;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    position: absolute;
+    top: 40px;
+    right: 152px;
+    color: white;
+    text-align: center;
+    line-height: 1.3;
+}
