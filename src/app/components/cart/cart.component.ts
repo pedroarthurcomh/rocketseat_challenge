@@ -8,6 +8,8 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class CartComponent implements OnInit {
   cart_items: any;
+  products_price: string = '0';
+  total_price: any = 0;
 
   constructor(private product_service: ProductsService) {}
 
@@ -18,6 +20,7 @@ export class CartComponent implements OnInit {
       this.cart_items = cart
     } else {this.cart_items = undefined}
 
+    this.calculate_products_price()
   }
 
   remove_item(id: any){
@@ -30,11 +33,30 @@ export class CartComponent implements OnInit {
     }
     localStorage.setItem('cart', JSON.stringify(this.cart_items))
 
-    
-
+    this.calculate_products_price()
     this.product_service.item_added$.emit(1)
   }
 
+  calculate_products_price(){
+    let price = 0
+    for(let item of this.cart_items){
+      price += item.price_in_cents
+    }
+    price = price/100
+    this.products_price = `R$ ${price.toLocaleString('pt-BR',{
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })}`
+    if(this.products_price != 'R$ 0,00'){
+      let total: any = price + 40
+      this.total_price = `R$ ${total.toLocaleString('pt-BR',{
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      })}`
+    } else {
+      this.total_price = 'R$ 0,00'
+    }
+  }
 
 
   price(initial_price: number){

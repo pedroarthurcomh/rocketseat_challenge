@@ -10,10 +10,10 @@
         <div class="products-in-cart">
             <div class="title">
                 <h2>Seu Carrinho</h2>
-                <p class="total-info">Total ({{cart_items.length}} produtos) <span class="header-price">R$ 161,00</span></p> 
+                <p class="total-info">Total ({{cart_items.length}} produtos) <span class="header-price">{{products_price}}</span></p> 
             </div>
             <ul class="products-list" *ngIf="cart_items">
-                <li *ngFor="let item of cart_items">
+                <li *ngFor="let item of cart_items" [routerLink]="'/product/'+item.id">
                     <div class="product-card">
                         <img [src]="item.image_url" alt="" style="object-fit: cover;">
                         <div class="product-info">
@@ -31,14 +31,14 @@
                             </div>
 
                             <div class="card-footer">
-                                <select name="count" id="item-count">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
+                                <select name="count" id="item-count" [value]="item.quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
-                                <h2 class="card-price">{{price(item.price_in_cents)}}</h2>
+                                <h2 class="card-price">{{price(item.price_in_cents*item.quantity)}}</h2>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                 <div class="prices">
                     <div class="subtotal">
                         <span>Subtotal de produtos</span>
-                        <span>R$ 161,00</span>
+                        <span>{{products_price}}</span>
                     </div>
                     <div class="delivery">
                         <span>Entrega</span>
@@ -62,7 +62,7 @@
                     <hr style="margin-top: 24px; margin-bottom: 8px;">
                     <div class="total-price">
                         <span>Total</span>
-                        <span>R$ 201,00</span>
+                        <span>{{total_price}}</span>
                     </div>
                 </div>
                 <button class="buy-button">Finalizar a compra</button>

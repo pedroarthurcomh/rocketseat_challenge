@@ -116,7 +116,7 @@ span.product-name {
 
 div.product-price {
     background-color: white;
-    padding: 8px 12px;
+    padding: 8px 12px 10px 12px;
     max-height: 78px;
     max-width: 256px;
     border-radius: 0px 0px 8px 8px;
