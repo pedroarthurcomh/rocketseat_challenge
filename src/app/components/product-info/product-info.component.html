@@ -1,1 +1,36 @@
-<p>product-info works!</p>
+<section>
+    <a routerLink="/">
+        <div class="back">
+            <img src="../../../assets/icons/Backward, Rearward, Back.svg" alt="">
+            <span>Voltar</span>
+        </div>
+    </a>
+    
+    <main>
+        <div class="product-img">
+            <img [src]="product.image_url" alt="" style="object-fit: cover;">
+        </div>
+
+        <div class="product-info">
+            <div>
+                <span *ngIf="product.category === 't-shirts'" class="category">Camisetas</span>
+                <span *ngIf="product.category === 'mugs'" class="category">Canecas</span>
+                <div class="product-info-header">
+                    <h3 class="product-name">{{product.name}}</h3>
+                    <span class="product-price">
+                        {{price(product.price_in_cents)}}
+                    </span>
+                    <p class="delivery-info">*Frete de R$40,00 para todo o Brasil. Grátis para compras acima de R$900,00.</p>
+                </div>
+                <div class="product-description">
+                    <h3 class="subtitle">Descrição</h3>
+                    <p class="description-paragraph">{{product.description}}</p>
+                </div>
+            </div>
+            <button class="add-to-cart" (click)="add_to_cart()">
+                <img src="../../../assets/icons/Shopping, Ecommerce/shopping-bag.svg" alt="">
+                <span>Adicionar ao carrinho</span>
+            </button>
+        </div>
+    </main>
+</section>
