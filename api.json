@@ -1,0 +1,124 @@
+{
+    "products" : [
+        {
+            "id": "1acf3d4d-ba7f-4a71-a705-ce1177a94e36",
+            "name": "Caneca de cerâmica rústica",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/caneca-06.jpg",
+            "category": "mugs",
+            "price_in_cents": 4499,
+            "created_at": "2023-08-28",
+            "sales": 251
+        },
+        { 
+            "id": "a90d36f4-e0af-44eb-a434-6ce8cd81239a",    
+            "name": "Camiseta not today.",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/camiseta-05.jpg",
+            "category": "t-shirts",
+            "price_in_cents": 2650,
+            "created_at": "2023-07-22",
+            "sales": 232
+        },
+        { 
+            "id": "cc339b17-b52b-4c38-afd4-358ca7ee1a9d",    
+            "name": "Caneca Black Ring",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/caneca-04.jpg",
+            "category": "mugs",
+            "price_in_cents": 8750,
+            "created_at": "2022-08-03",
+            "sales": 285
+        },
+        { 
+            "id": "bf586f94-142a-4706-9e3c-8eacdc44d426",    
+            "name": "Camiseta Broken Saints",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/camiseta-03.jpg",
+            "category": "t-shirts",
+            "price_in_cents": 7100,
+            "created_at": "2021-10-15",
+            "sales": 78
+        },
+        { 
+            "id": "18dff17a-1bcc-420c-b413-d8f07a1fe8d9",    
+            "name": "Camiseta Outcast",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/camiseta-06.jpg",
+            "category": "t-shirts",
+            "price_in_cents": 9799,
+            "created_at": "2023-05-03",
+            "sales": 226
+        },
+        { 
+            "id": "93cd1da4-3729-4b62-9873-55ea660e8c41",    
+            "name": "Caneca The Grounds",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/caneca-05.jpg",
+            "category": "mugs",
+            "price_in_cents": 5850,
+            "created_at": "2023-07-16",
+            "sales": 144
+        },
+        { 
+            "id": "2bba8956-74e9-4857-abbc-d580f1cdeb74",    
+            "name": "Camiseta evening",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/camiseta-02.jpg",
+            "category": "t-shirts",
+            "price_in_cents": 10000,
+            "created_at": "2023-10-27",
+            "sales": 174
+        },
+        { 
+            "id": "3b59c7aa-9035-4dd5-be8d-3d726d8e830a",    
+            "name": "Caneca preto fosco",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/caneca-01.jpg",
+            "category": "mugs",
+            "price_in_cents": 4450,
+            "created_at": "2022-03-08",
+            "sales": 251
+        },
+        { 
+            "id": "9f6e4789-4f12-40b1-8b88-a121107dde29",    
+            "name": "Caneca Never settle",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/caneca-03.jpg",
+            "category": "mugs",
+            "price_in_cents": 7600,
+            "created_at": "2022-05-12",
+            "sales": 139
+        },
+        { 
+            "id": "859a3872-d7f1-48f8-9f23-c098b74248e1",    
+            "name": "Camiseta DREAMER",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/camiseta-01.jpg",
+            "category": "t-shirts",
+            "price_in_cents": 9550,
+            "created_at": "2022-07-13",
+            "sales": 151
+        },
+        { 
+            "id": "8deb5db7-54a3-4766-86cc-31215491f477",    
+            "name": "Caneca Decaf! P&Co",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/caneca-02.jpg",
+            "category": "mugs",
+            "price_in_cents": 8900,
+            "created_at": "2023-08-11",
+            "sales": 191
+        },
+        { 
+            "id": "56491de7-4df0-41fe-8fd1-ed1870d7f06e",    
+            "name": "Camiseta Ramones",
+            "description": "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+            "image_url": "https://storage.googleapis.com/xesque-dev/challenge-images/camiseta-04.jpg",
+            "category": "t-shirts",
+            "price_in_cents": 3699,
+            "created_at": "2022-10-04",
+            "sales": 252
+        }
+    ]
+}
