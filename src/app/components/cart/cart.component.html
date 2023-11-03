@@ -13,9 +13,9 @@
                 <p class="total-info">Total ({{cart_items.length}} produtos) <span class="header-price">{{products_price}}</span></p> 
             </div>
             <ul class="products-list" *ngIf="cart_items">
-                <li *ngFor="let item of cart_items" [routerLink]="'/product/'+item.id">
+                <li *ngFor="let item of cart_items">
                     <div class="product-card">
-                        <img [src]="item.image_url" alt="" style="object-fit: cover;">
+                        <img [src]="item.image_url" alt="" style="object-fit: cover; cursor: pointer;" [routerLink]="'/product/'+item.id">
                         <div class="product-info">
                             <div>
                                 <div class="card-header">
