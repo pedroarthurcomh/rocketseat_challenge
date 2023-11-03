@@ -31,7 +31,7 @@
                             </div>
 
                             <div class="card-footer">
-                                <select name="count" id="item-count" [value]="item.quantity">
+                                <select name="count" id="item-count" [value]="item.quantity" (change)="product_quantity($event, item.id)">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>

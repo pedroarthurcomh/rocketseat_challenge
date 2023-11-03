@@ -66,4 +66,14 @@ export class CartComponent implements OnInit {
       maximumFractionDigits: 2
     })}`
   }
+
+  product_quantity(e: Event, id: any){
+    let new_quantity = (e.target as HTMLSelectElement).value;
+    const productIndex = this.cart_items.findIndex((item: any) => item.id === id);
+      if (productIndex !== -1) {
+        this.cart_items[productIndex].quantity = new_quantity;
+        localStorage.setItem('cart', JSON.stringify(this.cart_items));
+      }
+      this.calculate_products_price();
+  }
 }
