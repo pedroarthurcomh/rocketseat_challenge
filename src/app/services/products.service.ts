@@ -20,4 +20,8 @@ export class ProductsService {
     return this.http.get(`${this.apiUrl}/${id}`)
   }
 
+  get_by_category(filter: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}?category=${filter}`)
+  }
+
 }

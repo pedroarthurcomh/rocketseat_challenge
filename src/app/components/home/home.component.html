@@ -2,19 +2,17 @@
     <div class="filters">
         <div class="category">
             <ul id="category_filter">
-                <li [ngClass]="{head_item_active: category_filter === 1}" (click)="change_filter_category(1)">Todos os produtos</li>
-                <li [ngClass]="{head_item_active: category_filter === 2}" (click)="change_filter_category(2)">Camisetas</li>
-                <li [ngClass]="{head_item_active: category_filter === 3}" (click)="change_filter_category(3)">Canecas</li>
+                <li [ngClass]="{head_item_active: category_filter === 1}" (click)="change_filter_category('all', 1)">Todos os produtos</li>
+                <li [ngClass]="{head_item_active: category_filter === 2}" (click)="change_filter_category('t-shirts', 2)">Camisetas</li>
+                <li [ngClass]="{head_item_active: category_filter === 3}" (click)="change_filter_category('mugs', 3)">Canecas</li>
             </ul>
             <div class="order-by">
-                <!-- <p>Organizar por</p>
-                <img src="../../../assets/icons/Arrow.svg" alt=""> -->
-                <select name="order-by" id="order-by">
+                <select name="order-by" id="order-by" (change)="orderBy($event)">
                     <option disabled selected>Organizar por</option>
-                    <option value="">Novidades</option>
-                    <option value="">Preço: Maior - menor</option>
-                    <option value="">Preço: Menor - maior</option>
-                    <option value="">Mais vendidos</option>
+                    <option value="novidades">Novidades</option>
+                    <option value="maior-menor">Preço: Maior - menor</option>
+                    <option value="menor-maior">Preço: Menor - maior</option>
+                    <option value="mais-vendidos">Mais vendidos</option>
                 </select>
             </div>
         </div>

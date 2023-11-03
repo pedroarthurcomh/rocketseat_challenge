@@ -27,8 +27,33 @@ export class HomeComponent implements OnInit {
     })}`
   }
 
-  change_filter_category(value: number){
-    this.category_filter = value
+  change_filter_category(filter: string, id: number){
+    this.category_filter = id
+    let select = document.getElementById('order-by') as HTMLSelectElement
+    select.options[0].selected = true
+
+    if(filter === 'all'){
+      this.products_service.get_all_products().subscribe((res: any) => {
+        this.products = res
+      })
+    } else {
+      this.products_service.get_by_category(filter).subscribe((res: any) => {
+        this.products = res
+      })
+    }
+  }
+
+  orderBy(e: Event){
+    const filterBy = (e.target as HTMLSelectElement).value;
+    if(filterBy === 'mais-vendidos'){
+      this.products = this.products.sort((a: any, b: any) => b.sales - a.sales);
+    } else if(filterBy === 'novidades'){
+      this.products = this.products.sort((a: any, b: any) => parseInt(b.created_at) - parseInt(a.created_at));
+    } else if(filterBy === 'maior-menor'){
+      this.products = this.products.sort((a: any, b: any) => b.price_in_cents - a.price_in_cents);
+    } else if(filterBy === 'menor-maior'){
+      this.products = this.products.sort((a: any, b: any) => a.price_in_cents - b.price_in_cents);
+    }
   }
 
 }
