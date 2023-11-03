@@ -19,6 +19,7 @@ export class ProductInfoComponent implements OnInit {
   ngOnInit(): void {
     this.product_service.get_specific_product(this.product_id).subscribe((res: any) => {
       this.product = res
+      this.product.quantity = 0
     })
   }
 
@@ -29,10 +30,21 @@ export class ProductInfoComponent implements OnInit {
     let old_cart = []
     if(cart_exist){
       old_cart = JSON.parse(cart_exist)
+      const productIndex = old_cart.findIndex((item: any) => item.id === this.product.id);
+      if (productIndex !== -1) {
+        old_cart[productIndex].quantity++;
+      }else{
+        this.product.quantity++
+        old_cart.push(this.product)
+      }
+      let new_cart = JSON.stringify(old_cart)
+      localStorage.setItem('cart', new_cart)
+    } else{
+      this.product.quantity++
+      old_cart.push(this.product)
+      let new_cart = JSON.stringify(old_cart)
+      localStorage.setItem('cart', new_cart)
     }
-    old_cart.push(this.product)
-    let new_cart = JSON.stringify(old_cart)
-    localStorage.setItem('cart', new_cart)
 
     this.product_service.item_added$.emit(1)
   }

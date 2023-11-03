@@ -40,7 +40,7 @@ export class CartComponent implements OnInit {
   calculate_products_price(){
     let price = 0
     for(let item of this.cart_items){
-      price += item.price_in_cents
+      price += item.price_in_cents*item.quantity
     }
     price = price/100
     this.products_price = `R$ ${price.toLocaleString('pt-BR',{
