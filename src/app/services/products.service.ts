@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -6,23 +6,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
+  public item_added$: EventEmitter<any> = new EventEmitter();
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl = 'http://localhost:44493'; 
+  private apiUrl = 'http://localhost:3000/products'; 
 
   public get_all_products(): Observable<any> {
-    const query = `
-      {
-        allProducts {
-          id
-          name
-          price_in_cents
-        }
-      }
-    `;
+    return this.http.get(this.apiUrl)
+  }
 
-    return this.http.post(this.apiUrl, { query });
+  get_specific_product(id: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}`)
+  }
+
+  get_by_category(filter: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}?category=${filter}`)
   }
 
 }

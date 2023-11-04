@@ -2,13 +2,18 @@
     <div class="filters">
         <div class="category">
             <ul id="category_filter">
-                <li class="head_item_active">Todos os produtos</li>
-                <li>Camisetas</li>
-                <li>Canecas</li>
+                <li [ngClass]="{head_item_active: category_filter === 1}" (click)="change_filter_category('all', 1)">Todos os produtos</li>
+                <li [ngClass]="{head_item_active: category_filter === 2}" (click)="change_filter_category('t-shirts', 2)">Camisetas</li>
+                <li [ngClass]="{head_item_active: category_filter === 3}" (click)="change_filter_category('mugs', 3)">Canecas</li>
             </ul>
             <div class="order-by">
-                <p>Organizar por</p>
-                <img src="../../../assets/icons/Arrow.svg" alt="">
+                <select name="order-by" id="order-by" (change)="orderBy($event)">
+                    <option disabled selected>Organizar por</option>
+                    <option value="novidades">Novidades</option>
+                    <option value="maior-menor">Preço: Maior - menor</option>
+                    <option value="menor-maior">Preço: Menor - maior</option>
+                    <option value="mais-vendidos">Mais vendidos</option>
+                </select>
             </div>
         </div>
         <div class="filter-nav">
@@ -26,21 +31,12 @@
 
     <main>
         <ul class="products-list">
-            <li class="product-card">
-                <img src="https://storage.googleapis.com/xesque-dev/challenge-images/caneca-06.jpg" alt="" style="object-fit: cover;">
+            <li class="product-card" *ngFor="let item of products" [routerLink]="'product/'+item.id">
+                <img [src]="item.image_url" alt="" style="object-fit: cover;">
                 <div class="product-price">
-                    <span class="product-name ">Caneca de cerâmica rústica</span>
+                    <span class="product-name">{{item.name}}</span>
                     <hr style="margin-block: 8px; color: #DCE2E5;">
-                    <span style="font-weight: 600; font-size: 14px;">R$ 40,00</span>
-                </div>
-            </li>
-
-            <li class="product-card">
-                <img src="https://storage.googleapis.com/xesque-dev/challenge-images/camiseta-05.jpg" alt="" style="object-fit: cover;">
-                <div class="product-price">
-                    <span class="product-name ">Camiseta not today</span>
-                    <hr style="margin-block: 8px; color: #DCE2E5;">
-                    <span style="font-weight: 600; font-size: 14px;">R$ 78,00</span>
+                    <span style="font-weight: 600; font-size: 14px;">{{price(item.price_in_cents)}}</span>
                 </div>
             </li>
         </ul>

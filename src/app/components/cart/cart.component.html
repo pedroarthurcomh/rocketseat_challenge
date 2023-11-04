@@ -1,1 +1,95 @@
-<p>cart works!</p>
+<section>
+    <a routerLink="/">
+        <div class="back">
+            <img src="../../../assets/icons/Backward, Rearward, Back.svg" alt="">
+            <span>Voltar</span>
+        </div>
+    </a>
+    
+    <main>
+        <div class="products-in-cart">
+            <div class="title">
+                <h2>Seu Carrinho</h2>
+                <p class="total-info">Total ({{cart_items.length}} produtos) <span class="header-price">{{products_price}}</span></p> 
+            </div>
+            <ul class="products-list" *ngIf="cart_items">
+                <li *ngFor="let item of cart_items">
+                    <div class="product-card">
+                        <img [src]="item.image_url" alt="" style="object-fit: cover; cursor: pointer;" [routerLink]="'/product/'+item.id">
+                        <div class="product-info">
+                            <div>
+                                <div class="card-header">
+                                    <h3>{{item.name}}</h3>
+                                    <a style="cursor: pointer;" (click)="remove_item(item.id)">
+                                        <img src="../../../assets/icons/Trash, Delete, Bin.svg" alt="">
+                                    </a>
+                                </div>
+    
+                                <div class="card-main">
+                                    <p>{{item.description}}</p>
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <select name="count" id="item-count" [value]="item.quantity" (change)="product_quantity($event, item.id)">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <h2 class="card-price">{{price(item.price_in_cents*item.quantity)}}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <span [hidden]="cart_items">Seu carrinho está vazio.</span>
+        </div>
+
+        <div class="order-summary">
+            <div class="summary-top">
+                <h1 class="summary-title">Resumo do Pedido</h1>
+                <div class="prices">
+                    <div class="subtotal">
+                        <span>Subtotal de produtos</span>
+                        <span>{{products_price}}</span>
+                    </div>
+                    <div class="delivery">
+                        <span>Entrega</span>
+                        <span>R$ 40,00</span>
+                    </div>
+                    <hr style="margin-top: 24px; margin-bottom: 8px;">
+                    <div class="total-price">
+                        <span>Total</span>
+                        <span>{{total_price}}</span>
+                    </div>
+                </div>
+                <button class="buy-button">Finalizar a compra</button>
+            </div>
+            <div class="summary-bottom">
+                <div class="summary-tools">
+                    <ul class="tools-list">
+                        <a class="tool-links">
+                            <li>Ajuda</li>
+                        </a>
+                        <a class="tool-links">
+                            <li>Reembolsos</li>
+                        </a>
+                        <a class="tool-links">
+                            <li>Entregas e frete</li>
+                        </a>
+                        <a class="tool-links">
+                            <li>Trocas e devoluções</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>
